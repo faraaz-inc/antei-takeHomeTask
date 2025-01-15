@@ -4,7 +4,7 @@ import { GeminiManager } from "../gemini/geminiManager";
 import { StorageManager } from "../store/storageManager";
 
 const router = Router();
-const upload = multer({ dest: "../uploads/" });
+const upload = multer({ dest: "uploads/" });
 
 router.post("/upload-cv", upload.single("file"), async(req, res) => {
     try {
@@ -23,7 +23,8 @@ router.post("/upload-cv", upload.single("file"), async(req, res) => {
         res.json(response);
     }
     catch(err) {
-
+        console.error(err);
+        res.status(500).send("Error in processing the file");
     }
 });
 

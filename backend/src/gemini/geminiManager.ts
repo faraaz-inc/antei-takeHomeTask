@@ -24,9 +24,9 @@ export class GeminiManager {
     }
 
     public static getInstance(): GeminiManager {
-        if(!GeminiManager.instance) {
+        if(!GeminiManager.instance)
             GeminiManager.instance = new GeminiManager();
-        }
+
         return GeminiManager.instance;
     }
 
